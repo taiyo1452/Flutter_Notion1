@@ -38,11 +38,10 @@ class _FlutterLesson extends State<FlutterLesson> {
           mainAxisAlignment: .center,
 
           children: <Widget>[
-            const Text("アセットの画像を表示"),
-            Image.asset("../assets/images/hakase.jpg", width: 200, height: 200),
-
-            const Text("ネットの画像を表示"),
-            Image.network("https://cataas.com/cat", width: 200, height: 200),
+            Icon(Icons.star, size: 30, color: Colors.yellow),
+            Icon(Icons.face, size: 50, color: Colors.pink),
+            Icon(Icons.settings, size: 70, color: Colors.green),
+            Icon(Icons.home, size: 100, color: Colors.blue),
           ],
         ),
       ),
