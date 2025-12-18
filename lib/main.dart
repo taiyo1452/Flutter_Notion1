@@ -26,6 +26,15 @@ class FlutterLesson extends StatefulWidget {
 }
 
 class _FlutterLesson extends State<FlutterLesson> {
+  void _showSnackBar(BuildContext context, String message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+        duration: const Duration(milliseconds: 800),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,10 +47,45 @@ class _FlutterLesson extends State<FlutterLesson> {
           mainAxisAlignment: .center,
 
           children: <Widget>[
-            Icon(Icons.star, size: 30, color: Colors.yellow),
-            Icon(Icons.face, size: 50, color: Colors.pink),
-            Icon(Icons.settings, size: 70, color: Colors.green),
-            Icon(Icons.home, size: 100, color: Colors.blue),
+            const Text("ElevateButtonのサンプル"),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color.fromARGB(255, 139, 255, 86),
+                minimumSize: const Size(250, 60),
+              ),
+              onPressed: () {
+                _showSnackBar(context, "ElevatedButtonが押されたよ");
+              },
+              child: const Text(
+                "ElevatedButton",
+                style: TextStyle(fontSize: 20, color: Colors.red),
+              ),
+            ),
+
+            const Text("TextButtonのサンプル"),
+            TextButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red,
+                minimumSize: const Size(250, 60),
+              ),
+              onPressed: () {
+                _showSnackBar(context, "TextButtonが押されたよ");
+              },
+              child: Text(
+                "TextButton",
+                style: TextStyle(
+                  fontSize: 20,
+                  color: const Color.fromARGB(255, 9, 255, 17),
+                ),
+              ),
+            ),
+            const Text("IconButtonのサンプル"),
+            IconButton(
+              icon: const Icon(Icons.settings, color: Colors.blue, size: 60),
+              onPressed: () {
+                _showSnackBar(context, "IconButtonが押されたよ");
+              },
+            ),
           ],
         ),
       ),
