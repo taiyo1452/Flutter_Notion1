@@ -38,31 +38,11 @@ class _FlutterLesson extends State<FlutterLesson> {
           mainAxisAlignment: .center,
 
           children: <Widget>[
-            const Text("普通のテキスト"),
+            const Text("アセットの画像を表示"),
+            Image.asset("../assets/images/hakase.jpg", width: 200, height: 200),
 
-            Text(
-              'TextStyleで装飾したテキスト',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.blue,
-              ),
-            ),
-
-            Text(
-              "適当に影をつけたテキスト",
-              style: TextStyle(
-                color: Colors.red,
-                fontSize: 24,
-                shadows: [
-                  Shadow(
-                    blurRadius: 3.0,
-                    color: Colors.grey,
-                    offset: Offset(2.0, 2.0),
-                  ),
-                ],
-              ),
-            ),
+            const Text("ネットの画像を表示"),
+            Image.network("https://cataas.com/cat", width: 200, height: 200),
           ],
         ),
       ),
